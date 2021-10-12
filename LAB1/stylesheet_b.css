@@ -1,0 +1,59 @@
+/*This is the stylesheet for Assignment B.*/
+
+/*Changing font and size for paragraphs and headers.*/
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 75%;
+}
+
+h1{
+    font-family: cursive;
+    font-size: 90%;
+}
+
+h2{
+    font-family: fantasy;
+    font-size: 110%;
+}
+
+/*Changing style and color of table borders.*/
+table.customTable{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table._4x4{
+    border: 3px solid mediumspringgreen;
+    table-layout: fixed;
+    width: 400px;
+}
+
+table._2x2{
+    border: 3px dashed mediumslateblue;
+    table-layout: fixed;
+    width: 350px;
+}
+
+table.customTable._4x4 th, table.customTable._4x4 td{
+    border: 1px solid black;
+    border-left-width: 2px;
+    border-right-width: 2px;
+}
+
+table.customTable._4x4 th{
+    border-bottom-width: 2px;
+}
+
+table.customTable._2x2 td{
+    border: 2px solid black;
+}
+
+/*Removing underlines from links.*/
+a{
+    text-decoration: none;
+}
+
+/*Changing marker style for unordered lists*/
+ul{
+    list-style-type: disc;
+}

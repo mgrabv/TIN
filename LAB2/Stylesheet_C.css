@@ -1,0 +1,65 @@
+body{
+    background-color: darkslategrey;
+}
+
+div.main{
+    height: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: cornflowerblue;
+    overflow: auto;
+}
+
+div.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+div.banner{
+    resize: both;
+    height: 15%;
+    margin: 3% 10% 3% 10%;
+    border: 2px solid lime;
+    background-image: url("https://thumbs.dreamstime.com/b/music-banner-mobile-smartphone-screen-music-application-sound-headphones-audio-voice-radio-beats-black-music-banner-221042724.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+div.banner_text{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 4vmin;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    color: white;
+}
+
+h2{
+    text-decoration: underline;
+    margin-left: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+div.article{
+    border: 1px solid black;
+    background-color: darkcyan;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    height: 20%;
+}
+
+p{
+    margin: 2%;
+}
+
+a:hover{
+    color: deeppink;
+}
