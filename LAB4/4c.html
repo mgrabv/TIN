@@ -1,24 +1,23 @@
+<!DOCTYPE html>
 <html>
-    <script type="text/javascript">
-        function palindrome(string){
-            
-            let str = string.toLowerCase();
-            let len = Math.floor(str.length / 2);
-
-            for (let i = 0; i < len; i++){
-                if (str[i] !== str[str.length - i - 1]){
-                    return false;
-                }
+<script type="text/javascript">
+    function palindrome(string){
+        
+        let str = string.toLowerCase();
+        let len = Math.floor(str.length / 2);
+        for (let i = 0; i < len; i++){
+            if (str[i] !== str[str.length - i - 1]){
+                return false;
             }
-            return true;
         }
-
-        let string = "RaceCar RaceCar"
-        console.log("Is " + '"'+string+'"' + " a palindrome?: " + palindrome(string));
-    </script>
-    <head>
-        <title>LAB4 Task 4c</title>
-    </head>
-    <body>
-    </body>
+        return true;
+    }
+    let string = "RaceCar RaceCar"
+    console.log("Is " + '"'+string+'"' + " a palindrome?: " + palindrome(string));
+</script>
+<head>
+    <title>LAB4 Task 4c</title>
+</head>
+<body>
+</body>
 </html>
