@@ -2,19 +2,19 @@
 <html>
 <script type="text/javascript">
     function factorialIterative(number){
-        var result;
+        let result;
         if (number == 0){
             return "Can't calculate factorial of 0.";
         }
         else{
             result = 1;
-            for (var i = number; i >= 1; i--){
+            for (let i = number; i >= 1; i--){
                 result *= i;
             }
             return result;
         }
     }
-    var factorialRecursive = function(number){
+    let factorialRecursive = function(number){
         if (number == 0){
             return "Can't calculate factorial of 0.";
         }
@@ -25,7 +25,7 @@
             return number * factorialRecursive(number - 1);
         }
     }
-    var n = 5;
+    let n = 5;
     console.log("Iterative factorial result: " + factorialIterative(n));
     console.log("Recursive factorial result: " + factorialRecursive(n));
 </script>
