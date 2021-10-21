@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+    function isPrime(number){
+        for (let i = 2; i < number; i++){
+            if (number % i == 0){
+                return false;
+            }
+        }
+        return number > 1;
+    }
+
+    let number = 5;
+    console.log("Is " + number + " a prime number?: " + isPrime(number));
+</script>
+<head>
+    <title>LAB4 Task 4f</title>
+</head>
+<body>
+</body>
+</html>
