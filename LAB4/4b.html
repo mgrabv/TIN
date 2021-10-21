@@ -1,0 +1,35 @@
+<html>
+    <script type="text/javascript">
+        /*
+        I treat 0 as the first number of the sequence,
+        the function can be easily modified to treat 1
+        as the first number of the sequence ...
+        */
+        function fibonacci(number){
+            if (number <= 0){
+                return "Does not exist.";
+            }
+            else if (number <= 2){
+                return number - 1;
+            }
+
+            var a = 0;
+            var b = 1;
+
+            for (var i = 3; i <= number; i++){
+                var tmp = a;
+                a = b;
+                b = b + tmp;
+            }
+            return b;
+        }
+
+        var nth = 10;
+        console.log("The " + nth + ". number of the Fibonacci sequence is: " + fibonacci(nth));
+    </script>
+    <head>
+        <title>LAB4 Task 4b</title>
+    </head>
+    <body>
+    </body>
+</html>
