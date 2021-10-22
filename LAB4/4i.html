@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+    function moneyToCoins(amount, coins){
+        coins = coins.sort((a, b) => (b - a));
+        let result = [];
+        for (let i = 0; i < coins.length; i++){
+            if (coins[i] <= amount){
+                amount -= coins[i];
+                result.push(coins[i]);
+                i--;
+            }
+        }
+        return amount == 0 ? result : "The amount cannot be converted to coins with these coin values.";
+    }
+
+    let amount = 46;
+    let coins = [5, 2, 1, 10, 25];
+    console.log("Result: " + moneyToCoins(amount, coins));
+
+</script>
+<head>
+    <title>LAB4 Task 4i</title>
+</head>
+<body>
+</body>
+</html>
