@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+    function binarySearch(array, number){
+        array = array.sort((a, b) => (a - b));
+        console.log("Sorted array: " + array);
+        let start = 0;
+        let end = array.length - 1;
+
+        while (start <= end){
+            let middle = Math.floor((start + end) / 2);
+            if (array[middle] == number){
+                return middle;
+            }
+            if (array[middle] < number){
+                start = middle + 1;
+            }
+            else{
+                end = middle - 1;
+            }
+        }
+        return "This number does not exist in the given array.";
+    }
+
+    let array = [13, 42, 5, 62, 3, 4, 1, 23, 56];
+    let number = 13;
+    console.log("Searching for: " + number + " in array: " + array);
+    console.log("Number: " + number + " in the sorted array has index: " + binarySearch(array, number));
+</script>
+<head>
+    <title>LAB4 Task 4j</title>
+</head>
+<body>
+</body>
+</html>
