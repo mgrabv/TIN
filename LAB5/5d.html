@@ -3,27 +3,27 @@
     <script type="text/javascript">
         function createStudent(firstName, lastName, id, grades){
             return {
-            firstname: firstName,
-            lastname: lastName,
-            id: id,
-            grades: grades,
-            gradeAverage: function(){ return this.grades.reduce((a, b) => (a + b)) / grades.length; },
-            basicInfo: function(){
-                console.log("First Name: " + this.firstname +
-                            "\n" + "Last Name: " + this.lastname +
-                            "\n" + "Student's grade average: " + this.gradeAverage());
-            },
-            getAverageGrade: function(){ return this.gradeAverage(); },
-            getFullName: function(){ return this.firstname + " " + this.lastname },
-            setFullName: function(firstname, lastname){ this.firstname = firstname; this.lastname = lastname; }
+                firstname: firstName,
+                lastname: lastName,
+                id: id,
+                grades: grades,
+                gradeAverage: function(){ return this.grades.reduce((a, b) => (a + b)) / grades.length; },
+                basicInfo: function(){
+                    console.log("First Name: " + this.firstname +
+                                "\n" + "Last Name: " + this.lastname +
+                                "\n" + "Student's grade average: " + this.gradeAverage());
+                },
+                get AverageGrade() {  return this.gradeAverage(); },
+                get FullName() { return this.firstname + " " + this.lastname },
+                set FullName(fullname) { this.firstname = fullname.split(" ")[0]; this.lastname = fullname.split(" ")[1]; }
             };
-}
+        }
 
         let student1 = createStudent("Some", "Student", 1, [2, 3, 4, 3]);
-        console.log(student1.getFullName());
-        console.log("Grade Average: " + student1.getAverageGrade());
-        student1.setFullName("newFirstName", "newLastName");
-        console.log(student1.getFullName());
+        console.log(student1.FullName);
+        console.log("Grade Average: " + student1.AverageGrade);
+        student1.FullName = "newFirstName, newLastName";
+        console.log(student1.FullName);
     </script>
 <head>
     <title>LAB5 Task 5d</title>
