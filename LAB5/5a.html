@@ -9,11 +9,12 @@
             getName: function(){return this.name;},
             getAge: function(){return this.age;}
         }
-    
+
         function objectInfo(object){
             Object.entries(object).forEach((entry)=> console.log("Property: " + entry[0] + " Type: " + typeof(entry[1])));
         }
-    
+
+        //Example
         objectInfo(student);
     </script>
 <head>
