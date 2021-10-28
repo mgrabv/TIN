@@ -7,7 +7,7 @@
                 lastname: lastName,
                 id: id,
                 grades: grades,
-                gradeAverage: function(){ return this.grades.reduce((a, b) => (a + b)) / grades.length; },
+                gradeAverage: function(){ return this.grades.reduce((a, b) => (a + b)) / this.grades.length; },
                 basicInfo: function(){
                     console.log("First Name: " + this.firstname +
                                 "\n" + "Last Name: " + this.lastname +
