@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript">
+        let prototype = {
+        firstname: "Student",
+        lastname: "Student",
+        id: 1,
+        courses: ["TIN", "BYT", "ZPR"]
+        };
+
+        function newStudent(prototype, firstName, lastName, id){
+            return {
+                firstname: firstName,
+                lastname: lastName,
+                id: id,
+                courses: prototype.courses
+            };
+        }
+
+        let student = newStudent(prototype, "newStudent", "newStudent", 2);
+        Object.entries(student).forEach((entry) => {
+            console.log(entry[0] + ": " + entry[1]);
+        });
+    </script>
+<head>
+    <title>LAB5 Task 5c</title>
+</head>
+<body>
+</body>
+</html>
