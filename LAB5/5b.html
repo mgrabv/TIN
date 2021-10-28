@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript">
+        function createStudent(firstName, lastName, id, grades){
+            return {
+                firstname: firstName,
+                lastname: lastName,
+                id: id,
+                grades: grades,
+                gradeAverage: function(){ return this.grades.reduce((a, b) => (a + b)) / grades.length; },
+                basicInfo: function(){
+                    console.log("First Name: " + this.firstname +
+                                "\n" + "Last Name: " + this.lastname);
+                }
+            };
+        }
+
+        let student1 = createStudent("Some", "Student", 1, [2, 3, 4, 3]);
+        student1.basicInfo();
+        console.log("Student grade average: " + student1.gradeAverage());
+    </script>
+<head>
+    <title>LAB5 Task 5b</title>
+</head>
+<body>
+</body>
+</html>
