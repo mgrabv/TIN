@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript">
+        class Person {
+
+            constructor(firstName, lastName){
+                this.firstname = firstName;
+                this.lastname = lastName;
+            }
+
+            get FullName() { return this.firstname + " " + this.lastname; }
+            set FullName(fullname) { this.firstname = fullname.split(" ")[0]; this.lastname = fullname.split(" ")[1] }
+        }
+
+        class Student extends Person {
+    
+            constructor(firstName, lastName, id, grades){
+                super(firstName, lastName);
+                this.id = id;
+                this.grades = grades;
+            }
+
+            gradeAverage() { return this.grades.reduce((a, b) => (a + b)) / this.grades.length; }
+
+            basicInfo(){
+                console.log("First Name: " + this.firstname +
+                            "\n" + "Last Name: " + this.lastname +
+                            "\n" + "Student's grade average: " + this.gradeAverage());
+            }
+        }
+        
+        let student1 = new Student("Some", "Student", 1, [2, 3, 4, 3]);
+        student1.basicInfo();
+
+        console.log("\n" + student1.FullName);
+        student1.FullName = "newFirstName, newLastName";
+        console.log(student1.FullName);
+    </script>
+<head>
+    <title>LAB5 Task 5f</title>
+</head>
+<body>
+</body>
+</html>
