@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript">
+        let student = {
+            name: "Smart",
+            surname: "Student",
+            age: 21,
+            setName: function(string) {this.name = string;},
+            getName: function(){return this.name;},
+            getAge: function(){return this.age;}
+        }
+    
+        function objectInfo(object){
+            Object.entries(object).forEach((entry)=> console.log("Property: " + entry[0] + " Type: " + typeof(entry[1])));
+        }
+    
+        objectInfo(student);
+    </script>
+<head>
+    <title>LAB5 Task 5a</title>
+</head>
+<body>
+</body>
+</html>
