@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body>
+    <div style="display: flex; align-items: center; justify-content: center; min-height: 98vh;">
+        <div style="display: flex; flex-direction: row; column-gap: 20%;">
+            <form style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <label>Left Column:</label>
+                <input id="left" type="text" style="margin-bottom: 10%;"/>
+                <label>Middle Column:</label>
+                <input id="middle" type="text" style="margin-bottom: 10%;"/>
+                <label>Right Column:</label>
+                <input id="right" type="text" style="margin-bottom: 10%;"/>
+                <button type="button" onclick="populateTable()">Create Row</button>
+            </form>
+            <table id="tab" style="text-align: center; border: 1px solid black; border-collapse: collapse; width: 1000px; height: 500px;">
+                <tr>
+                    <th style="border: 2px solid black;">Left Column</th>
+                    <th style="border: 2px solid black;">Middle Column</th>
+                    <th style="border: 2px solid black;">Right Column</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let leftInput = document.getElementById("left");
+    let middleInput = document.getElementById("middle");
+    let rightInput = document.getElementById("right");
+    let mainTable = document.getElementById("tab");
+
+    function populateTable() {
+        let newRow = mainTable.insertRow(-1);
+        let leftCell = newRow.insertCell(0);
+        let middleCell = newRow.insertCell(1);
+        let rightCell = newRow.insertCell(2);
+
+        leftCell.style.border = "1px solid black";
+        middleCell.style.border = "1px solid black";
+        rightCell.style.border = "1px solid black";
+
+        leftCell.appendChild(document.createTextNode(leftInput.value));
+        middleCell.appendChild(document.createTextNode(middleInput.value));
+        rightCell.appendChild(document.createTextNode(rightInput.value));
+    }
+</script>
+</html>
