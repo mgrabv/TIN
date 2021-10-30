@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <form style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 98vh;">
+        <label id="sNumLab">Student number:</label>
+        <input type="number" id="sNum" style="margin-bottom: 2%;" required/>
+        <label id="eMailLab">E-mail:</label>
+        <input type="text" id="eMail" style="margin-bottom: 2%;" required/>
+        <button type="button" onclick="validate()">Submit</button>
+    </form>
+</body>
+<script type="text/javascript">
+    let sNumField = document.getElementById("sNum");
+    let sNumLabel = document.getElementById("sNumLab");
+    let eMailField = document.getElementById("eMail");
+    let eMailLabel = document.getElementById("eMailLab");
+
+    let sNumReg = new RegExp("^[0-9][0-9][0-9][0-9][0-9]$");
+    let eMailReg = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+
+    function validate(){
+        if (!sNumReg.test(sNumField.value)) {
+            sNumField.style.color="red";
+            sNumField.style.borderColor="red";
+            alert("Student number incorrect.");
+        }
+        else {
+            sNumField.style.color="black";
+            sNumField.style.borderColor="black";
+        }
+        if (!eMailReg.test(eMailField.value)) {
+            eMailField.style.color="red";
+            eMailField.style.borderColor="red";
+            alert("E-mail address incorrect.");
+        }
+        else {
+            eMailField.style.color="black";
+            eMailField.style.borderColor="black";
+        }
+        if (sNumReg.test(sNumField.value) && eMailReg.test(eMailField.value)) {
+            alert("Success!");
+            console.log("Validated successfully.")
+            return true;
+        }
+        else {
+            console.log("Validated unsuccessfully.");
+            return false;
+        }
+    }
+</script>
+</html>
