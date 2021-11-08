@@ -17,7 +17,7 @@ fs.readdir(dir, function(err, files) {
     if (err) {
         throw err;
     }
-    files.forEach(file => {
+    files.forEach(function(file) {
         fs.watchFile(path.resolve(dir, file), function(curr, prev) {
             fs.readFile(path.resolve(dir, file), function(err, data) {
                 if (err) {
