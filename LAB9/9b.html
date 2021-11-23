@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Form</title>
+</head>
+<body style="max-width: max-content; margin:auto; margin-top: 15%;">
+    <form style="display: flex; flex-direction: row; margin-bottom: 5%; margin-left: 2%;">
+        <div>
+            <div>
+                <input id="num1" name="num1" type="number" style="width: 25%;"/>
+            </div>
+            <div>
+                <label for="num1" style="margin-left: 11%;">A</label>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input list="OPs" id="OP" style="width: 15%;"/>
+                <datalist id="OPs">
+                    <option value="+">
+                    <option value="-">
+                    <option value="*">
+                    <option value="/">
+                </datalist>
+            </div>
+            <div>
+                <label for="OP" style="margin-left: 4%;">OP</label>
+            </div>
+        </div>
+        <div>
+            <div><input id="num2" name="num2" type="number" style="width: 25%;"/></div>
+            <div><label for="num2" style="margin-left: 11%;">B</label></div>
+        </div>
+    </form>
+    <button style="margin-left: 31%;" type="submit" onclick="submitData()">Calculate</button>
+    <h3 id="result" style="margin-top: 10%; margin-left: 25%;">Result:</h3>
+</body>
+<script type="text/javascript">
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const op = document.getElementById("OP");
+    const result = document.getElementById("result");
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          result.innerHTML = "Result: " + JSON.parse(request.responseText).result;
+        }
+    };
+
+    function submitData(){
+        result.innerHTML = "Result:"; //Reset result when hitting submit.
+        request.open("POST", "http://localhost:8080/jsonmath", true);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(JSON.stringify({
+            a: num1.value,
+            b: num2.value,
+            op: op.value
+        }));
+    }
+</script>
+</html>
