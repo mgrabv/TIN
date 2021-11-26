@@ -1,0 +1,28 @@
+body {
+    max-width: max-content;
+    margin: auto;
+    background-color: black;
+    background-image: url(https://i.kym-cdn.com/photos/images/facebook/001/985/625/b8b.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+label {
+    color: lime;
+}
+
+div.container {
+    margin-top: 35vh;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20vw;
+}
+
+div.subContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+    max-width: fit-content;
+    align-items: center;
+    justify-content: center;
+}
